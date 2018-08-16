@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="emp/list" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/emp/emp_list.jsp"/>
+	</definition>
+	
+	<definition name="emp/register" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/emp/register.jsp"/>
+	</definition>
+	
+	<definition name="emp/search" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/emp/search.jsp"/>
+	</definition>
+	
+	<definition name="emp/read" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/emp/emp_read.jsp"/>
+	</definition>
+	
+</tiles-definitions>

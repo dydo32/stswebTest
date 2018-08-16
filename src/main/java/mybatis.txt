@@ -1,0 +1,25 @@
+mybatis프레임워크를 사용하기 위한 순서
+1. pom.xml에 라이브러리를 추가
+	- mybatis
+	- mybatis-spring
+	
+2. spring설정파일에 mybatis의 핵심클래스를 등록
+	1) org.mybatis.spring.SqlSessionFactoryBean
+		=> mybatis의 핵심클래스인 SqlSessionFactory를 액세스 하는 객체
+			mybatis만 연동하면 직접 SqlSessionFactory를 생성해야 하지만 스프링을 이용할 것이므로
+			SqlSessionFactoryBean을 통해 접근해야 한다.
+			- db와 연동하므로 dataSource를 설정해야 한다.
+			- mybatis의 설정파일명을 등록
+				: config파일 - 기본설정정보를 등록
+				  mapper파일 - sql등록(테이블당 파일 하나씩)
+	2) org.mybatis.spring.SqlSessionTemplate
+		=> JdbcTemplate처럼 사용되는 클래스
+			내부에서 SqlSessionFactoryBean을 통해 mybatis의 SqlSessionFactory에 접근
+			
+3. 설정파일
+	1) mybatis의 기본설정파일
+		=> 전체적인 설정 정보를 기록
+			mapper의 위치, 사용될 dto의 등록
+	2) mapper설정파일
+		=> sql을 정의
+		

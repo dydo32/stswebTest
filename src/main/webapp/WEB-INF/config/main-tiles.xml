@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="mainTemplate" template="/WEB-INF/template/mainLayout.jsp">
+		<put-attribute name="top" value="/WEB-INF/template/top.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/menu/spring_jdbc.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/template/content.jsp"/>
+	</definition>
+	
+	<definition name="index" extends="mainTemplate">
+	</definition>
+	
+	<definition name="menu/jdbc" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/emp/emp_list.jsp"/>
+	</definition>
+	
+	<definition name="menu/mybatis" extends="mainTemplate">
+		<put-attribute name="menu" value="/WEB-INF/menu/mybatis_menu.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/board/boardlist.jsp"/>
+	</definition>
+	
+	<definition name="menu/advanced" extends="mainTemplate">
+		<put-attribute name="menu" value="/WEB-INF/menu/advanced_menu.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/job/purchase_main.jsp"/>
+	</definition>
+</tiles-definitions>
