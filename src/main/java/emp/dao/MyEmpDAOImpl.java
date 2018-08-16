@@ -25,8 +25,7 @@ public class MyEmpDAOImpl implements MyEmpDAO {
 
 	@Override
 	public int insert(EmpDTO user) {
-		String sql =
-		"insert into kitriemp values(?,?,?,?,sysdate,?,1000,?)";
+		String sql = "insert into kitriemp values(?,?,?,?,sysdate,?,1000,?)";
 		//update
 		int result = 
 		 template.update(sql, user.getId(),user.getPass(),

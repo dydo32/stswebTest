@@ -21,8 +21,9 @@ public class InsertController {
 	}
 	@RequestMapping(value="/insert.do",method=RequestMethod.POST)
 	public String insert(EmpDTO user){
-		System.out.println("userinfo=>"+user);
-		dao.insert(user);
+		//System.out.println("userinfo=>"+user);
+		int result = dao.insert(user);
+		System.out.println(result+"개 삽입 성공");
 		return "redirect:/list.do";
 	}
 	
