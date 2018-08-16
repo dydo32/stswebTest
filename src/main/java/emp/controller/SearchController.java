@@ -16,7 +16,7 @@ import emp.dto.EmpDTO;
 @Controller
 public class SearchController {
 	@Autowired
-	@Qualifier("empdao")
+	@Qualifier("empmybatis")
 	MyEmpDAO dao;
 
 	@RequestMapping(value="/search.do",method=RequestMethod.GET)

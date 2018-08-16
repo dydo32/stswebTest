@@ -20,7 +20,7 @@ public class IndexController{
 	@RequestMapping("/menu/mybatis.do")
 	public String showmybatisMenu(){
 		System.out.println("mybatis화면");
-		return "redirect:/board/list.do";
+		return "redirect:/board/list.do?category=all";
 	}
 	
 	@RequestMapping("/menu/advanced.do")

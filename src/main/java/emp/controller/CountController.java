@@ -9,7 +9,7 @@ import emp.dao.MyEmpDAO;
 @Controller
 public class CountController{
 	@Autowired
-	@Qualifier("empdao")
+	@Qualifier("empmybatis")
 	MyEmpDAO dao;
 
 	@RequestMapping(value="/count.do")

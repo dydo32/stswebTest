@@ -23,25 +23,7 @@ public class BoardDAOImpl implements BoardDAO {
 		int result = sqlSession.insert("kr.kitri.board.insert", board);
 		return result;
 	}
-
-	@Override
-	public List<BoardDTO> searchList(String search) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<BoardDTO> searchList(String tag, String search) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<BoardDTO> pageList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public BoardDTO read(String board_no) {
 		BoardDTO board = sqlSession.selectOne("kr.kitri.board.read", board_no);
@@ -58,6 +40,24 @@ public class BoardDAOImpl implements BoardDAO {
 	public int delete(String board_no) {
 		int result = sqlSession.delete("kr.kitri.board.delete", board_no);
 		return result;
+	}
+	
+	@Override
+	public List<BoardDTO> searchList(String category) {
+		List<BoardDTO> categorylist = sqlSession.selectList("kr.kitri.board.category", category);
+		return categorylist;
+	}
+
+	@Override
+	public List<BoardDTO> searchList(String tag, String search) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<BoardDTO> pageList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

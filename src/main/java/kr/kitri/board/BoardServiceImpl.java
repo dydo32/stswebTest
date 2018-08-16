@@ -22,24 +22,6 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<BoardDTO> searchList(String search) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<BoardDTO> searchList(String tag, String search) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<BoardDTO> pageList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public BoardDTO read(String board_no) {
 		return dao.read(board_no);
 	}
@@ -53,6 +35,24 @@ public class BoardServiceImpl implements BoardService {
 	public int delete(String board_no) {
 		// TODO Auto-generated method stub
 		return dao.delete(board_no);
+	}
+
+
+	@Override
+	public List<BoardDTO> searchList(String category) {
+		return dao.searchList(category);
+	}
+
+	@Override
+	public List<BoardDTO> searchList(String tag, String search) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<BoardDTO> pageList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

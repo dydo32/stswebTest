@@ -9,7 +9,7 @@
 	</insert>
 	
 	<select id="listall" resultType="board">
-		select * from board
+		select * from board order by board_no desc
 	</select>
 	
 	<select id="read" resultType="board" parameterType="String">
@@ -17,10 +17,14 @@
 	</select>
 	
 	<update id="update" parameterType="board">
-		update board set title=#{title}, content=#{content} where board_no=#{board_no}
+		update board set title=#{title}, content=#{content}, category=#{category} where board_no=#{board_no}
 	</update>
 	
 	<delete id="delete" parameterType="String">
 		delete from board where board_no=#{board_no}
 	</delete>
+	
+	<select id="category" resultType="board" parameterType="String">
+		select * from board where category=#{category} order by board_no desc
+	</select>
 </mapper>

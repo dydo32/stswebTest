@@ -12,7 +12,7 @@ import emp.dto.EmpDTO;
 @Controller
 public class InsertController {
 	@Autowired
-	@Qualifier("empdao")
+	@Qualifier("empmybatis")
 	MyEmpDAO dao;
 	
 	@RequestMapping(value="/insert.do",method=RequestMethod.GET)

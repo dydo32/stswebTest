@@ -19,16 +19,15 @@
 	<h4>
 		<i class="fa fa-angle-right"></i> 게시글 작성하기
 	</h4>
-	<hr>
+	<hr/>
 	<div class="row mt">
 		<div class="col-lg-12">
 			<div class="form-panel">
-			
 				<form class="form-horizontal style-form" action="/stswebTest/board/write.do" method="post">
 					<div class="form-group" style="border: 1px solid #eff2f7;">
 						<label class="col-sm-2 col-sm-2 control-label">작성자</label>
 						<div class="col-sm-10">
-							<input type="hidden" name="id" value="jang"/>
+							<input type="hidden" name="id" value="lee"/>
 							<p class="form-control-static">김서연</p>
 						</div>
 						<div class="form-group">
@@ -60,16 +59,12 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<div class="col-lg-4 text-center"></div>
-							<div class="col-lg-2 text-center">
+							<div class="col-lg-8 text-center">
 								<button type="submit" class="btn btn-success"
 									style="width: 100px; background-color: #0ea006">등록</button>
-							</div>
-							<div class="col-lg-2 text-center">
 								<button type="reset" class="btn btn-default"
 									style="width: 100px; background-color: #9a9a9a">취소</button>
 							</div>
-						
 						</div>
 					</div>
 				</form>
