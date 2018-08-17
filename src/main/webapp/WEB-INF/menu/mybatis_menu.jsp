@@ -9,7 +9,7 @@
 <body>
 	<div class="list-group"> 
 		<a href="/stswebTest/board/insertView.do" class="list-group-item">게시판등록</a> 
-		<a href="/stswebTest/board/list.do" class="list-group-item">게시판조회</a>
+		<a href="/stswebTest/board/list.do?category=all" class="list-group-item">게시판조회</a>
 		
 	</div>
 </body>

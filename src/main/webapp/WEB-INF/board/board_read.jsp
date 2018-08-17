@@ -75,7 +75,7 @@
 
 		<div class="form-group">
 			<div class="col-md-10 text-center">
-				<input type="submit" class="btn btn-lg btn-primary" value="수정">
+				<input type="submit" class="btn btn-lg btn-primary" style="margin-left: 13%;" value="수정">
 				<button type="button" class="btn btn-danger btn-lg" 
 					onclick="location.href='/stswebTest/board/list.do'">
 					<i class="fa fa-fw fa-close"></i> 목록
