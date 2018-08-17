@@ -37,14 +37,14 @@ public class EmpDTO {
 	}
 
 	public String getAddr() {
-		System.out.println("getAddr()");
+		//System.out.println("getAddr()");
 		return addr;
 		
 	}
 
 	public void setAddr(String addr) {
 		this.addr = addr;
-		System.out.println("setAddr()");
+		//System.out.println("setAddr()");
 	}
 
 	@Override

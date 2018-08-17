@@ -15,8 +15,9 @@ public class DeleteController {
 	
 	@RequestMapping(value="/delete.do")
 	public String delete(String id){
-		System.out.println("id=>"+id);
+		//System.out.println("id=>"+id);
 		int result = dao.delete(id);
+		System.out.println(result+"개 삭제 성공");
 		return "redirect:/list.do";
 	}
 }
