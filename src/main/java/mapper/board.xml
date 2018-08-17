@@ -27,4 +27,32 @@
 	<select id="category" resultType="board" parameterType="String">
 		select * from board where category=#{category} order by board_no desc
 	</select>
+	
+	<select id="dynamicsearch" resultType="board" parameterType="Map">
+		select * from board
+		<where>
+			<if test="tag=='title' and search!=''">
+				title like '%' || #{search} || '%'
+			</if>
+			<if test="tag=='id' and search!=''">
+				id like '%' || #{search} || '%'
+			</if>
+			<if test="tag=='content' and search!=''">
+				content like '%' || #{search} || '%'
+			</if>
+			<if test="tag=='write_date' and search!=''">
+				<![CDATA[to_date(write_date) <= #{search}]]>
+			</if>
+		</where>
+	</select>
 </mapper>
+
+
+
+
+
+
+
+
+
+

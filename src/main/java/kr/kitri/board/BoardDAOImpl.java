@@ -1,6 +1,8 @@
 package kr.kitri.board;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,8 +52,10 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public List<BoardDTO> searchList(String tag, String search) {
-		// TODO Auto-generated method stub
-		return null;
+		Map<String,String> map = new HashMap<String, String>();
+		map.put("tag", tag);
+		map.put("search", search);
+		return sqlSession.selectList("kr.kitri.board.dynamicsearch", map);
 	}
 
 	@Override

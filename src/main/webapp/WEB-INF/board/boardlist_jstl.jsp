@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*,kr.kitri.board.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-category = "<%=request.getAttribute("category")%>"
+category = "${category}"
+//alert(category);
 $(document).ready(function(){
 	if(category==""){
 		category="all";
@@ -19,18 +21,15 @@ $(document).ready(function(){
 	$("#category").change(function(){
 		location.href="/stswebTest/board/list.do?category="+encodeURI($(this).val());
 	});
-});
+}); 
 </script>
 </head>
 <body>
-	<%
-		ArrayList<BoardDTO> boardlist = (ArrayList<BoardDTO>) request.getAttribute("boardlist");
-		int size = boardlist.size();
-	%>
+	<h3>JSTL게시판</h3>
 	<div style="padding-top: 30px">
 		<div class="col-md-3" style="padding-bottom: 10px">
 		    구분:
-			<form action="/stswebTest/board/list.do" >
+			<form>
 				<select name="category"  id="category">
 					<option value="all">전체게시물</option>
 					<option value="경조사">경조사</option>
@@ -49,20 +48,15 @@ $(document).ready(function(){
 				</tr>
 			</thead>
 			<tbody>
-				<%
-					for (int i = 0; i < size; i++) {
-						BoardDTO board = boardlist.get(i);
-				%>
+				<c:forEach var="board" items="${boardlist }">
 				<tr>
-					<td><%=board.getBoard_no()%></td>
+					<td>${board.board_no }</td>
 					<td><a
-						href="/stswebTest/board/read.do?board_no=<%=board.getBoard_no()%>&state=READ"><%=board.getTitle()%></a></td>
-					<td><%=board.getId()%></td>
-					<td><%=board.getWrite_date()%></td>
-				</tr>
-				<%
-					}
-				%>
+						href="/stswebTest/board/read.do?board_no=${board.board_no }&state=READ">${board.title }</a></td>
+					<td>${board.id }</td>
+					<td>${board.write_date }</td>
+				</tr> 
+				</c:forEach>
 			</tbody>
 		</table>
 	</div>

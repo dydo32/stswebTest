@@ -33,7 +33,6 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public int delete(String board_no) {
-		// TODO Auto-generated method stub
 		return dao.delete(board_no);
 	}
 
@@ -45,13 +44,11 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<BoardDTO> searchList(String tag, String search) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.searchList(tag, search);
 	}
 
 	@Override
 	public List<BoardDTO> pageList() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

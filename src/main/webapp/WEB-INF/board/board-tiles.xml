@@ -10,7 +10,7 @@
 	
 	<definition name="board/list" extends="mainTemplate">
 		<put-attribute name="menu" value="/WEB-INF/menu/mybatis_menu.jsp"/>
-		<put-attribute name="content" value="/WEB-INF/board/boardlist.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/board/boardlist_jstl.jsp"/>
 	</definition>
 
 	<definition name="board/read" extends="mainTemplate">

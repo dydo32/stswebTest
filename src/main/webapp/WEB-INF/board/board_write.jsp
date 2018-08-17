@@ -61,7 +61,7 @@
 						<div class="form-group">
 							<div class="col-lg-8 text-center">
 								<button type="submit" class="btn btn-success"
-									style="width: 100px; background-color: #0ea006">등록</button>
+									 style="width: 100px; background-color: #0ea006; margin-left: 50%;">등록</button>
 								<button type="reset" class="btn btn-default"
 									style="width: 100px; background-color: #9a9a9a">취소</button>
 							</div>

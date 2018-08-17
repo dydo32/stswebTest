@@ -26,7 +26,7 @@ public class BoardController {
 	public ModelAndView showlist(String category) {
 		ModelAndView mav = new ModelAndView();
 		List<BoardDTO> boardlist = null;
-		System.out.println("category==>"+category);
+		//System.out.println("category==>"+category);
 		if(category!=null) {
 			if(category.equals("all")) {
 				boardlist =service.boardList();
@@ -68,5 +68,14 @@ public class BoardController {
 		int result = service.delete(board_no);
 		System.out.println(result+"개 삭제 성공");
 		return "redirect:/board/list.do?category=all";
+	}
+
+	@RequestMapping(value="/board/search.do")
+	public ModelAndView search(String tag, String search) {
+		ModelAndView mav = new ModelAndView();
+		List<BoardDTO> boardlist = service.searchList(tag, search);
+		mav.addObject("boardlist", boardlist);
+		mav.setViewName("board/list"); 
+		return mav;
 	}
 }
