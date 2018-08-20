@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,15 +32,19 @@
 			<a href="#" style="position:absolute;top:30px;font-size: 18pt; font-weight: bolder;text-decoration: none;padding-left: 10px">Spring연습</a>
 			<ul class="nav navbar-nav navbar-right" 
 			 style="position:relative ;top:20px" >
+			 	<c:choose>
+			 		<c:when test="${empty loginUser}">
 					<li style="margin-right: 20px;height: 70px">
-					<a href="#"><span class="glyphicon glyphicon-log-in">
+					<a href="/stswebTest/view/emp/loginView.do"><span class="glyphicon glyphicon-log-in">
 							</span>Login</a></li>
-					</ul>
-					<!-- <li><a href="/kimsaemERP/logout.do"><span class="glyphicon glyphicon-log-out"></span>
-								Logout</a></li>
-					</ul> -->
-					
-				
+					</c:when>
+					<c:otherwise>
+					<li style="margin-right: 20px;height: 70px">
+					<a href="/stswebTest/emp/logout.do"><span class="glyphicon glyphicon-log-out"></span>
+							Logout</a></li>
+					</c:otherwise>
+				</c:choose>
+			</ul>
 			<form class="navbar-form pull-right" style="position:relative ;top:20px">
 				<input class="form-control mr-sm-2" type="search"
 					placeholder="Search" aria-label="Search">

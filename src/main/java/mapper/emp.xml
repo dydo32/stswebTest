@@ -32,8 +32,7 @@
 		update kitriemp set pass=#{pass},addr=#{addr},grade=#{grade} where id=#{id}
 	</update>
 	
-	<select id="login" resultType="emp" parameterType="String">
+	<select id="login" resultType="emp" parameterType="Map">
 		select * from kitriemp where id=#{id} and pass=#{pass}
 	</select>
-	
 </mapper>

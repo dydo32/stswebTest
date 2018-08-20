@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -40,8 +42,23 @@ public class BoardController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/board/read.do")
-	public ModelAndView read(String board_no, String state) {
+	@RequestMapping(value="/board/{category}/{board_no}")
+	public String read(@PathVariable String board_no,@PathVariable String category,String state, Model model) {
+		//System.out.println("readcontroller=>"+board_no+","+state);
+		BoardDTO board = service.read(board_no);
+		String viewName="";
+		if(state.equals("READ")) {
+			viewName="board/read";
+		}else if(state.equals("UPDATE")) {
+			viewName="board/update";
+		}
+		System.out.println(model);
+		model.addAttribute("board",board);
+		System.out.println(model);
+		return viewName;
+	}
+	/*
+	 public ModelAndView read(String board_no, String state, Model model) {
 		//System.out.println("readcontroller=>"+board_no+","+state);
 		ModelAndView mav = new ModelAndView();
 		BoardDTO board = service.read(board_no);
@@ -54,7 +71,7 @@ public class BoardController {
 		mav.addObject("board",board);
 		mav.setViewName(viewName);
 		return mav;
-	}
+	} */
 	
 	@RequestMapping(value="/board/update.do")
 	public String update(BoardDTO board) {
