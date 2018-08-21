@@ -66,4 +66,14 @@ public class MybatisEmpDAOImpl implements MyEmpDAO {
 		return emplist;
 	}
 
+	@Override
+	public boolean idCheck(String id) {
+		boolean state = false;
+		EmpDTO user = sqlSession.selectOne("kr.kitri.emp.idcheck", id);
+		if(user!=null) {
+			state = true;
+		}
+		return state;
+	}
+
 }

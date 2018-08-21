@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -94,5 +95,16 @@ public class BoardController {
 		mav.addObject("boardlist", boardlist);
 		mav.setViewName("board/list"); 
 		return mav;
+	}
+	
+	//일반메소드 리턴하는 것처럼 List<BoardDTO>를 리턴하면서
+	//@ResponseBody로 설정하면 jackson라이브러리가 자동으로 json객체로 변환
+	@RequestMapping(value = "/board/ajax_boardlist.do", method=RequestMethod.GET,
+			produces="application/json;charset=utf-8")
+	public @ResponseBody List<BoardDTO> ctgboardlist(String category) {
+		//System.out.println(category);
+		List<BoardDTO> boardlist = service.searchList(category);
+		//System.out.println(boardlist);
+		return boardlist;
 	}
 }

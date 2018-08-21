@@ -35,4 +35,8 @@
 	<select id="login" resultType="emp" parameterType="Map">
 		select * from kitriemp where id=#{id} and pass=#{pass}
 	</select>
+	
+	<select id="idcheck" resultType="emp" parameterType="String">
+		select * from kitriemp where id=#{id}
+	</select>
 </mapper>

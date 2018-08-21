@@ -12,6 +12,7 @@ public interface MyEmpDAO {
 	EmpDTO login(String id,String pass);
 	List<EmpDTO> getMemberList();
 	List<EmpDTO> findByAddr(String addr);
+	boolean idCheck(String id);
 }
 
 

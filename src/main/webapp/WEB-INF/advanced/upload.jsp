@@ -51,6 +51,7 @@ footer {
 </style>
 </head>
 <body>
+
 	<div class="col-sm-10">
 		<form method="post" enctype="multipart/form-data"
 			action="/insaPro/upload.do">
@@ -60,7 +61,8 @@ footer {
 			파일:<input type="file" name="upFile" /><br/>
 			<input type="submit" value="데이터 전송" /><br/>
 		</form>
-	</div>
+	</div>	
+	
 </body>
 </html>
 
