@@ -90,6 +90,12 @@ public class MyEmpDAOImpl implements MyEmpDAO {
 				 new Object[]{"%"+addr+"%"},new MyEmpRowMapper());
 	}
 
+	@Override
+	public boolean idCheck(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	
 }
 

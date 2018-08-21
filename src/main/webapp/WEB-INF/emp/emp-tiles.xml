@@ -19,4 +19,8 @@
 		<put-attribute name="content" value="/WEB-INF/emp/emp_read.jsp"/>
 	</definition>
 	
+	<definition name="emp/login" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/emp/login.jsp"/>
+	</definition>
+	
 </tiles-definitions>

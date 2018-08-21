@@ -52,7 +52,7 @@ $(document).ready(function(){
 				<tr>
 					<td>${board.board_no }</td>
 					<td><a
-						href="/stswebTest/board/read.do?board_no=${board.board_no }&state=READ">${board.title }</a></td>
+						href="/stswebTest/board/${board.category}/${board.board_no }?state=READ">${board.title }</a></td>
 					<td>${board.id }</td>
 					<td>${board.write_date }</td>
 				</tr> 

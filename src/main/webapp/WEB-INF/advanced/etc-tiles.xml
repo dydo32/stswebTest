@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="ajax/board" extends="mainTemplate">
+		<put-attribute name="menu" 
+				value="/WEB-INF/menu/advanced_menu.jsp"/>
+		<put-attribute name="content" 
+				value="/WEB-INF/board/ajax_boardlist.jsp"/>
+	</definition>
+	<definition name="ajax/test" extends="mainTemplate">
+		<put-attribute name="menu" 
+				value="/WEB-INF/menu/advanced_menu.jsp"/>
+		<put-attribute name="content" 
+				value="/WEB-INF/advanced/ajax_register.jsp"/>
+	</definition>
+	<definition name="advanced/upload" extends="mainTemplate">
+		<put-attribute name="menu" 
+				value="/WEB-INF/menu/advanced_menu.jsp"/>
+		<put-attribute name="content" 
+				value="/WEB-INF/advanced/upload.jsp"/>
+	</definition>
+	<definition name="advanced/i18n" extends="mainTemplate">
+		<put-attribute name="menu" 
+				value="/WEB-INF/menu/advanced_menu.jsp"/>
+		<put-attribute name="content" 
+				value="/WEB-INF/advanced/i18nView.jsp"/>
+	</definition>
+</tiles-definitions>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

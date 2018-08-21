@@ -28,7 +28,7 @@
 	</h4>
 	<hr/>
 	<%-- post방식이면 action에 ?로 넘겨줌,	 get방식이면 밑에 input hidden사용  --%>
-	<form class="form-horizontal" action="/stswebTest/board/read.do?state=UPDATE&board_no=<%=board.getBoard_no() %>" method="post">
+	<form class="form-horizontal" action="/stswebTest/board/${board.category}/<%=board.getBoard_no() %>?state=UPDATE" method="post">
 		<div class="form-group">
 			<div class="col-md-2 text-right">
 				<label for="id" class="control-label">번호</label>

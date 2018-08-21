@@ -40,7 +40,7 @@
 			 		 style="border-color:white;height: 800px;">
 				        <div style="background-color:#63cde7;padding: 20px;
 				        font-family:HY-견고딕;font-size: 16pt;color: white;
-				         font-weight: bolder;">${loginUser.job_category}</div>
+				         font-weight: bolder;"></div>
 				       	<tiles:insertAttribute name="menu"></tiles:insertAttribute>
       				 </div>
 			 	</div>

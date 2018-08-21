@@ -28,8 +28,10 @@
 		list.add("spark");
 		request.setAttribute("list", list);
 	%>
-	<c:forEach var="data" items="${list }">
-		<h3>${data }</h3>	
+	<c:forEach varStatus="mystatus" var="data" items="${list }">
+		<h3>${data }</h3>
+		<div>current=>${mystatus.current }</div>
+		<div>index=>${mystatus.index }</div>	
 	</c:forEach>
 	<h3>=> data변수에 저장된 데이터를 ArrayList에 어떤 타입의 데이터가 저장되어 있냐에 따라 달라진다.
 		지금같은 경우는 data변수에는 String이 저장
