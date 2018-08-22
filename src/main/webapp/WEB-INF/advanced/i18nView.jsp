@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<!-- DispatcherServlet이 전달하는 메시지를 출력할 페이지 -->
+<!-- DispatcherServlet이 전달하는 메시지를 출력할 페이지 
+	=>MessageSource로 .properties파일을 읽어들여서 선택한 내용을 출력할 수 있도록 처리
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +57,7 @@
 				name="myform">
 				<fieldset>
 					<div id="legend">
-						<legend>회원관리</legend>
+						<legend><spring:message code="member.title"/></legend>
 					</div>
 					<div class="form-group">
 						<!-- 부서코드 -->
@@ -70,7 +73,7 @@
 					
 					<div class="form-group">
 						<!-- 성명-->
-						<label class="control-label col-sm-2" for="orgname">성명</label>
+						<label class="control-label col-sm-2" for="orgname"><spring:message code="member.form.name"/></label>
 						<div class="col-sm-3">
 							<input type="text" id="orgname" name="name"
 								placeholder="성명" class="form-control" minlength="3" required>
@@ -80,27 +83,17 @@
 					<div class="form-group">
 						<!-- 아이디-->
 						<label class="control-label col-sm-2" for="id">
-						아이디</label>
+						<spring:message code="member.form.id"/></label>
 						<div class="col-sm-3">
 							<input type="text" id="id" name="id"
 								placeholder="아이디" class="form-control" 
 								minlength="3" required onkeyup="runAjax()">
-							
-						
 						</div>
-						<input type="button" value="아이디중복체크" class="btn btn-success"
-							onclick="openidcheck()"/>
 					</div>
 
-
-
-				
-
-
-					
 					<div class="form-group">
 						<!-- 패스워드-->
-						<label class="control-label col-sm-2" for="pass">패스워드</label>
+						<label class="control-label col-sm-2" for="pass"><spring:message code="member.form.pass"/></label>
 						<div class="col-sm-3">
 							<input type="text" id="pass" name="pass"
 								placeholder="패스워드" class="form-control" minlength="4" >
@@ -109,7 +102,7 @@
 					</div>
 					<div class="form-group">
 						<!-- 주소-->
-						<label class="control-label col-sm-2" for="addr">주소</label>
+						<label class="control-label col-sm-2" for="addr"><spring:message code="member.form.addr"/></label>
 						<div class="col-sm-3">
 							<input type="text" id="addr" name="addr"
 								placeholder="주소" class="form-control" minlength="3" >
@@ -141,7 +134,7 @@
 						<!-- Button -->
 						<div class="col-sm-3 col-sm-offset-2">
 							<input type="submit" 
-							value="회원가입" class="btn btn-success"/>
+							value="<spring:message code="member.form.submit"/>" class="btn btn-success"/>
 						</div>
 					</div>
 				</fieldset>

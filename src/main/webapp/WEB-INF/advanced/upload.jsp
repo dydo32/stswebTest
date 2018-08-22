@@ -51,10 +51,8 @@ footer {
 </style>
 </head>
 <body>
-
 	<div class="col-sm-10">
-		<form method="post" enctype="multipart/form-data"
-			action="/insaPro/upload.do">
+		<form method="post" enctype="multipart/form-data" action="/stswebTest/advanced/upload.do">
 			제목:<input type="text" name="title" /><br/>
 			성명:<input type="text" name="name" /><br/>
 			
@@ -62,7 +60,6 @@ footer {
 			<input type="submit" value="데이터 전송" /><br/>
 		</form>
 	</div>	
-	
 </body>
 </html>
 
