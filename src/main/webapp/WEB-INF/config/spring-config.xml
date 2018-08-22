@@ -83,6 +83,27 @@
 			<beans:bean class="advanced.LoginCheckInterceptor"/>
 		</interceptor>
 	</interceptors>
+	
+	
+	<!-- ======================== 파일 업로드(id명반드시) ======================== -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="5000000"/>
+		<beans:property name="defaultEncoding" value="UTF-8"/>
+	</beans:bean>
+	
+	<!-- ======================== 국제화처리(다국어지원 - id명반드시) ======================== -->
+	<!-- .properties파일에 입력한 내용을 읽어들여서 페이지에 출력할 메시지를 만들 수 있도록 지원해주는
+		MessageSource등록  -->
+	<beans:bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<beans:property name="basenames">
+			<beans:list>
+				<beans:value>/WEB-INF/i18n/message</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+	<!-- Locale정보를 처리하기 위한 LocaleResolver를 등록(id명반드시)
+		=> 쿠키정보에서 locale정보를 확인 -->
+	<beans:bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"/>	
 </beans:beans>
 
   

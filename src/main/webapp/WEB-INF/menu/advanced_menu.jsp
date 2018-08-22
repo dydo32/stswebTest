@@ -13,6 +13,12 @@
 		<a href="/stswebTest/view/upload" class="list-group-item">파일업로드</a>
 		<a href="/stswebTest/view/i18ntest" class="list-group-item">다국어지원</a>
 		<a href="#" class="list-group-item">트랜잭션처리</a>
+		<div class="list-group-item"> 
+		&nbsp;&nbsp;&nbsp;
+		<a href="/stswebTest/advanced/i18ntest.do?lang=ko">한국어</a>&nbsp;&nbsp;&nbsp;
+		<a href="/stswebTest/advanced/i18ntest.do?lang=en">영어</a>&nbsp;&nbsp;&nbsp;
+		<a href="/stswebTest/advanced/i18ntest.do?lang=jp">일본어</a>&nbsp;&nbsp;&nbsp;
+		</div>
 	</div>
 </body>
 </html>
