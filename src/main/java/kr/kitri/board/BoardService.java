@@ -6,7 +6,8 @@ public interface BoardService {
 	List<BoardDTO> boardList();
 
 	int insert(BoardDTO board);
-
+	int txinsert(BoardDTO board);
+	
 	// /board/list.do를 수정해서 작업 - 어려우면 새로만들어서 테스트
 	List<BoardDTO> searchList(String category);
 

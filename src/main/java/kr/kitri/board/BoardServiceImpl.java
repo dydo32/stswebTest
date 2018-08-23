@@ -19,6 +19,15 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int insert(BoardDTO board) {
 		return dao.insert(board);
+	}	
+	
+	//트랜잭션 메소드 - 논리적인 작업단위(계좌이체, 책구매, 물건구매, ..., 사원등록-가족사항,경력사항...)
+	@Override
+	public int txinsert(BoardDTO board) {
+		dao.insert(board);	//주문테이블에 insert - 주문의 일반적인 내용
+		dao.insert(null);	//주문상품테이블에 insert - 내가 주문한 상품의 목록
+		//주문같은 경우 수량을 -1 하는 메소드도 호출
+		return 0;
 	}
 
 	@Override

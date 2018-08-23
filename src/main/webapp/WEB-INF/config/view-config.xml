@@ -9,6 +9,8 @@
 	<!-- ===================뷰를 위한 컨트롤러 추가====================== -->
 	<view-controller path="/board/insertView.do" 
 									view-name="board/write"/>
+	<view-controller path="/view/transinsertView.do" 
+									view-name="board/transwrite"/>
 	<view-controller path="/view/emp/loginView.do" 
 									view-name="emp/login"/>
 	<view-controller path="/view/ajaxboard" 

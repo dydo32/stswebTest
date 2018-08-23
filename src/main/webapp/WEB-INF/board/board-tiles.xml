@@ -23,5 +23,9 @@
 		<put-attribute name="content" value="/WEB-INF/board/board_update.jsp"/>
 	</definition>
 	
+	<definition name="board/transwrite" extends="mainTemplate">
+		<put-attribute name="menu" value="/WEB-INF/menu/advanced_menu.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/board/transaction_write.jsp"/>
+	</definition>
 	
 </tiles-definitions>
