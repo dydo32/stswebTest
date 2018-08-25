@@ -17,6 +17,15 @@ public class BoardController {
 	@Autowired
 	BoardService service;
 	
+	//트랜잭션 처리하는 메소드
+	@RequestMapping(value="/board/txwrite.do",method=RequestMethod.POST)
+	public String txwrite(BoardDTO board) {
+		//System.out.println(board);
+		int result = service.txinsert(board);
+		System.out.println(result+"개행삽입성공!");
+		return "redirect:/board/list.do?category=all"; 
+	}
+	
 	@RequestMapping(value="/board/write.do",method=RequestMethod.POST)
 	public String write(BoardDTO board) {
 		//System.out.println(board);
