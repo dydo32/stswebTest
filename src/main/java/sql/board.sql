@@ -9,6 +9,7 @@ create table board(
 create sequence board_seq;
 
 select * from board;
+select * from kitriemp;
 
 select write_date from board;
 2018-08-16 15:30:58.0

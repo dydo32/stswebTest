@@ -81,6 +81,12 @@
 		</interceptor> -->
 		<!-- 인터셉트 추가시 이곳에 -->
 		<interceptor>
+			<mapping path="/**"/> 
+			<beans:bean id="webContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+				<beans:property name="cacheSeconds" value="0" />
+			</beans:bean>
+		</interceptor>
+		<interceptor>
 			<mapping path="/read.do"/>
 			<mapping path="/list.do"/>
 			<!-- <mapping path="/board/**"/> -->
@@ -137,6 +143,7 @@
 	 		id="transpointcut"/>
 	 	<aop:advisor advice-ref="txAdvice" pointcut-ref="transpointcut"/>
 	 </aop:config>
+	 
 </beans:beans>
 
 
