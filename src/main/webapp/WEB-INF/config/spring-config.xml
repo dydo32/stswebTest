@@ -86,6 +86,7 @@
 				<beans:property name="cacheSeconds" value="0" />
 			</beans:bean>
 		</interceptor>
+		
 		<interceptor>
 			<mapping path="/read.do"/>
 			<mapping path="/list.do"/>
